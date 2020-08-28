@@ -59,21 +59,17 @@ class Owner
   end
 
   def sell_pets
-  #   if self.cats.owner == nil
-  #     self.cats.mood = "nervous"
-  #   end
-  #   if self.dogs.owner == nil
-  #     self.dogs.mood = "nervous"
-  #   end
+    pets = self.dogs + self.cats
+    pets.each do |pet|
+      pet.mood = "nervous"
+      pet.owner = nil
+    end
+  end
 
-  #   self.cats.each do |kat|
-  #     kat.owner = nil
-  #   end
-  #   self.dogs.each do |dog|
-  #       dog.owner = nil
-  #   end
-  #    self.reset_all
-  # end
+  def list_pets
+    "I have #{self.dogs.count} dog(s), and #{self.cats.count} cat(s)."
+  end
+
 end
 
 
